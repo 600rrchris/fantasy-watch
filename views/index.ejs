@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fantasy Watch</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <form action="/players" method="GET">
+      <ul class="right">
+          <li>
+          <% if (user) { %>
+              <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+          <% } else { %>
+              <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+          <% } %>
+          </li>
+      </ul>
+
+
+
+  <!-- <h2 class="text-align center">Fantasy Watch</h2>
+ <form action="/" method="POST">
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="submit" class="btn btn-secondary">QB</button>
+        <button type="submit" class="btn btn-secondary">RB</button>
+        <button type="submit" class="btn btn-secondary">WR</button>
+        <button type="submit" class="btn btn-secondary">WR</button>
+        <button type="submit" class="btn btn-secondary">TE</button>
+        <button type="submit" class="btn btn-secondary">FLX</button>
+        <button type="submit" class="btn btn-secondary">D/ST</button>
+        <button type="submit" class="btn btn-secondary">K</button>
+      </div>
+       -->
+    <!-- </div>
+    </form>
+    <hr>
+    <div class="row col-xs-8 col-xs-offset-2">
+      <% if (teams) { %>
+        <%= teams %>
+      <% } else { %>
+        <h3 class="text-center text-info">
+          Submit a team!
+        </h3>
+      <% } %>
+    </div> -->
+</body>
+</html>
