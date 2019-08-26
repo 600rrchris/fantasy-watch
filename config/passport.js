@@ -2,8 +2,6 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var Player = require('../models/player');
 
-
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
 // new code below
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -30,11 +28,12 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-passport.serializeUser(function(student, done) {
-    done(null, student.id);
+
+passport.serializeUser(function(player, done) {
+    done(null, player.id);
 });
 passport.deserializeUser(function(id, done) {
-    Student.findById(id, function(err, student) {
-      done(err, student);
+    Player.findById(id, function(err, player) {
+      done(err, player);
     });
   });
