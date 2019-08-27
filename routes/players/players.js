@@ -6,8 +6,8 @@ const rootURL = 'http://api.sportradar.us/nfl/official/trial/v5/en/seasons/2018/
 var token = process.env.NFL_TOKEN;
 /* GET users listing. */
 
-router.get('/', playersCtrl.index)
-router.get('/players', playersCtrl.show);
-
+router.get('/', playersCtrl.index);
+router.get('/new', playersCtrl.new);
+router.post('/players', playersCtrl.create);
 
 module.exports = router;

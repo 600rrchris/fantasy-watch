@@ -3,12 +3,13 @@ var Schema = mongoose.Schema;
 
 
 
-var playerSchema = new Schema({
-    name: String,
-    team: String,
-    position: String,
-  });
 
+
+  var playerSchema = new Schema({
+    name: String,
+    position: String,
+    team: String,
+  })
   
 
   module.exports = mongoose.model('Player', playerSchema);

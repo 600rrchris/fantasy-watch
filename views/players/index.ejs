@@ -21,6 +21,12 @@
            <button type="button" class="btn btn-secondary">K</button>
          </div>
          <h1>Players</h1>
-         
+         <% players.forEach(function(p) { %>
+          <tr>
+            <td><%= m.name %></td>
+            <td><%= m.position %></td>
+            <td><%= p.team %></td>
+          </tr>
+          <% }); %>
 </body>
 </html>
