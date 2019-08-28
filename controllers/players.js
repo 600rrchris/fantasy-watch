@@ -9,16 +9,19 @@ module.exports = {
 };
 
 function index(req, res){
-    res.render('players/index')
+    Player.find({}, function(err, players){
+    res.render('players/index', {players})
+    });
 }
 
 function newPlayer (req, res, next){
     res.render('players/new', {teams: null})
   };
 
+ 
 function create(req, res, next){
     var player = new Player(req.body);
     player.save(function(err, doc) {
-    if(err) return res.render('players/new');
+    if(err){ console.log("test"); return res.render('players/new');}
     res.redirect('players/new');
     })};

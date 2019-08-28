@@ -8,6 +8,6 @@ var token = process.env.NFL_TOKEN;
 
 router.get('/', playersCtrl.index);
 router.get('/new', playersCtrl.new);
-router.post('/players', playersCtrl.create);
+router.post('/', playersCtrl.create);
 
 module.exports = router;

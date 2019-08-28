@@ -22,11 +22,9 @@
          </div>
          <h1>Players</h1>
          <% players.forEach(function(p) { %>
-          <tr>
-            <td><%= m.name %></td>
-            <td><%= m.position %></td>
-            <td><%= p.team %></td>
-          </tr>
-          <% }); %>
+         <div><%= p.name %></div>
+         <div><%= p.team %></div>
+         <div><%= p.position %></div>
+         <% }) %>
 </body>
 </html>
