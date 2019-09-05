@@ -1,30 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-    <h2 class="text-align center">Fantasy Watch</h2>
-    <form action="/" method="POST">
+<%- include('../partials/header') %>
+  
      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
          <div class="btn-group mr-2" role="group" aria-label="First group">
-           <button type="button" class="btn btn-secondary"><a href="/players/new">QB</a></button>
-           <button type="button" class="btn btn-secondary">RB</button>
-           <button type="button" class="btn btn-secondary">WR</button>
-           <button type="button" class="btn btn-secondary">WR</button>
-           <button type="button" class="btn btn-secondary">TE</button>
-           <button type="button" class="btn btn-secondary">FLX</button>
-           <button type="button" class="btn btn-secondary">D/ST</button>
-           <button type="button" class="btn btn-secondary">K</button>
-         </div>
-         <h1>Players</h1>
-         <% players.forEach(function(p) { %>
-         <div><%= p.name %></div>
-         <div><%= p.team %></div>
-         <div><%= p.position %></div>
+           <button type="button" class=""><a href="/players/new">Lets add something</a></button>
+
+         <table id="list" class="table">
+           <thead>
+             <tr>
+              <th>Name</th>
+              <th>team</th>
+              <th>position</th>
+              <th>delete</th>
+           </tr>
+          </thead>
+          <tbody>
+         <% players.forEach(function(p) {  %>
+           <tr>
+            <td><a href="/players/<%= p._id %>"><%= p.name %></a></td>
+            <td><%= p.team %></td>         
+             <td><%= p.position %></td>
+            <td>
+              <form action ="/players/delete/<%= p._id %>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+           </tr>
+        </tbody>
          <% }) %>
+        </table>
+      
 </body>
 </html>

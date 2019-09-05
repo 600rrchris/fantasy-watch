@@ -1,16 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <section id='show'>
-    <div><%= player.name %></div>
-    <div><%= player.position %></div>
-    <div><%= player.team %></div>
-</section>
+<%- include('../partials/header') %>
+<h1><%= player.name %></h1>
+<ul>
+        <li>Position: <%= player.position %></li>
+        <li>Team: <%= player.team %></li>
+</ul>
+<form action="/players/<%=player._id%>?_method=PUT" method="POST">
+<input name="name" type="text"  value="<%= player.name %>">
+<input name="position" type="text"  value="<%= player.position %>">
+<input name="team" type="text"  value="<%= player.team %>">
+<input type="submit" value="Edit">
+</form>
+
+
+
+<!-- <ul>
+    
+    <li>
+        <%= response.data.season %>   
+    </li>
+    <li>
+        <%= response.data.season.id %>   
+    </li>
+    <li>
+        <%= response.data.season.year %>   
+    </li>
+    <li>
+        <%= response.data.teams.position %>   
+    </li>
+    <li>
+        
+    </li>
+</ul> -->
+
+    
 </body>
 </html>

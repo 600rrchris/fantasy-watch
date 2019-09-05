@@ -9,18 +9,15 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <form action="/players" method="GET">
-      <ul class="right">
-    <form action="/players" method="GET">
-      <ul class="right">
+    <h2 class="text-align center">Fantasy Watch</h2>
+     <ul class="right">
           <li>
           <% if (user) { %>
-              <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+              <a href="/logout"><i class="material-icons left">Log Out</i></a>
           <% } else { %>
-              <a href="/auth/google"><i class="jumbotron text-center">Fantasy Watch</i></a>
+              <a href="/auth/google"><i class="material-icons left">Log In</i></a>
           <% } %>
           </li>
       </ul>
-      
-      <%- include('./partials/footer') %>
-      
+    
+  
